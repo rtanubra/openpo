@@ -1,0 +1,16 @@
+{%  extends 'store/basic/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Edit {{customer.name}}</h1>
+<hr>
+<br>
+<div class="row">
+    <div class="card card-body">
+        <form action="" method="POST" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" name='Submit'>
+        </form>
+    </div>
+</div>
+{% endblock %}

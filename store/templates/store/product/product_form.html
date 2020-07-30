@@ -1,0 +1,38 @@
+{%  extends 'store/basic/base.html' %}
+
+{% block content %}
+<br>
+<h1>Create/Edit Product</h1>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}   
+
+    {{form.name.label}}
+    <br>
+    {{form.name}}
+    <hr>
+
+    {{form.description.label}}
+    <br>
+    {{form.description}}
+    <hr>
+
+    {{form.price.label}}
+    <br>
+    {{form.price}}
+    <hr>
+
+    {{form.active.label}}
+    <br>
+    {{form.active}}
+    <hr>
+
+    <hr>
+    <button type="submit" class="btn btn-success">Save Product</button>
+    <hr>
+    <br>
+</form>
+
+
+
+{% endblock %}

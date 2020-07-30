@@ -1,0 +1,23 @@
+{% extends 'store/basic/base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<hr>
+<h2>Welcome Back, Login:</h2>
+<hr>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <section class="section login-section">
+                <form action=""method='POST'>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button class='btn btn-small btn-success' type='submit' >Login</button>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

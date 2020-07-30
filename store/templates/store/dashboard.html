@@ -1,0 +1,64 @@
+{%  extends 'store/basic/base.html' %}
+
+{% block content %}
+<br>   
+<h1>Welcome To Open PO</h1>
+<hr>
+<br>
+<div class="col">
+    <h2>Our Goal</h2>
+    <div class="row">
+        <div class="card card-body">
+            <p>
+                Selling amazing foods seems like a daunting challenge. 
+                Our goal is to help you do the boring administrative stuff and let you focus on the real work.
+                Take a look at our features table below and see what we do.
+                Better yet, <a class='btn btn-small btn-info' href="{% url 'register_seller' %}">Register</a>  to setup your account today.
+                If you are already a member then <span> <a class='btn btn-small btn-info' href="{% url 'login' %}">Login</a>!   </span>
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <h2>Lets Get Started</h2>
+    <div class="row">
+        <div class="card card-body">
+            <p>Here is what to do to get started</p>
+            <ol>
+                <li>Register and Create a Vendor account
+                    <ul>
+                        <li>Register as a new user and create your shop! </li>
+                    </ul>
+                </li>
+                <li>Create Products
+                    <ul>
+                        <li>Create The products you intend to sell</li>
+                    </ul>
+                </li>
+                <li>Pikcup Locations
+                    <ul>
+                        <li>Before the first orders come in create pickup locations where your products will be delivered to </li>
+                    </ul>
+                </li>
+                <li>Sell and wait till your oders come through</li>
+                <li>Create Customers
+                    <ul>
+                        <li>When orders come through create your customer profiles that you can save</li>
+                    </ul>
+                </li>
+                <li>Create Baskets
+                    <ul>
+                        <li>Create the basket your customer orders</li>
+                        <li>cook and deliver</li>
+                        <li>Update the Status as you go!</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <br>
+    <hr>
+</div>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,56 @@
+{%  extends 'store/basic/base.html' %}
+
+{% block content %}
+{%  include 'store/status/status_products.html' %}
+<hr>
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+				{{myFilter.form}}
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+<br>
+<div class="row">
+	<div class="card card-body">
+		<a class='btn btn-success' href="{% url 'create_product' %}">Add a Product</a> 
+	</div>
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Action</th>
+					<th>Product</th>
+                    <th>Price</th>
+                    <th>Active</th>
+                    <th>Description</th>
+				</tr>
+				{% for product in products %}
+					<tr>
+						<td>
+							<span><a href="{% url 'edit_product' product_id=product.id  %}">E</a></span>
+							<span><a href="{% url 'delete_product' product_id=product.id %}">D</a></span>	
+						</td>
+						<td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.active}}</td>
+						<td>{{product.description}}</td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

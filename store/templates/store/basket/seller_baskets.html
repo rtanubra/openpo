@@ -1,0 +1,63 @@
+{%  extends 'store/basic/base.html' %}
+
+{% block content %}
+{%  include 'store/status/status_orders.html' %}
+<hr>
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get">
+				{{myFilter.form}}
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
+	
+</div>
+<br>
+<div class="row">
+	<div class="card card-body">
+		<a class='btn btn-success' href="{% url 'create_basket' %}">Add a Basket</a> 
+	</div>
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Customer</th>
+                    <th>Status</th>
+                    <th>Date Created</th>
+                    <th>Contents</th>
+                    <th>Pickup Location</th>
+                    <th>Cost</th>
+					<th>Action</th>
+
+
+				</tr>
+				{% for basket in baskets %}
+					<tr>
+						<td>{{basket.customer.name}}</td>
+                        <td>{{basket.status}}</td>
+                        <td>{{basket.date_created}}</td>
+                        <td>{{basket.get_contents}}</td>
+                        <td>{{basket.pickup_location}}</td>
+                        <td>{{basket.get_basket_total}}</td>
+						<td>
+							<span><a href="{% url 'edit_basket' basket_id=basket.id  %}">E</a></span>
+							<span><a href="{% url 'delete_basket' basket_id=basket.id  %}">D</a></span>
+						</td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

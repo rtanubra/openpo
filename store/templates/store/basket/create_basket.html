@@ -1,0 +1,66 @@
+{%  extends 'store/basic/base.html' %}
+
+{% block content %}
+<h1>Create a Basket for {{seller_user.name}}</h1>
+<hr>
+<form action="" method="POST">
+ {% csrf_token %}
+
+    <h2>Customer</h2>
+    <div class="form-group">
+        <label for="customer">Select Customer</label>
+        <select class="form-control" name='customer' id="customer">
+        {% for customer in customers %}
+            <option value={{customer.id}} >{{customer.name}}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <hr>
+    <h2>Pickup Location</h2>
+    <div class="form-group">
+        <label for="pickup">Select Pickup Location</label>
+        <select class="form-control" name='pickup' id="pickup">
+        {% for pickup_location in pickup_locations %}
+            <option value={{pickup_location.id}} >{{pickup_location.name}}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <hr>
+    <h2>Products</h2>
+    <hr>
+    <br>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-6 col-lg-4 col-xl-4 col-sm-6 col-12">
+            <div class="card card-body product">
+                <h3>{{product.name}}</h3>
+                <p>Price:<span>${{product.price}}</span></p>
+                <p>{{product.description}}</p>
+                <h4>Order:</h4>
+                <div class="form-group">
+                    <label for="order_product_{{product.id}}">Order Quantity</label>
+                    <input min=0 max=1000 step=1 type="number" class="form-control" 
+                        id="order_product_{{product.id}}" name="order_product_{{product.id}}" 
+                        value="0">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h2>Notes</h2>
+    <div class="card card-body">    
+        <div class="form-group">
+            <label for="note">Notes</label>
+            <textarea class="form-control" name='note' id="note" rows="3"></textarea>
+        </div>
+    </div>
+    <hr>
+    <hr>
+     <button type="submit" class="btn btn-success">Submit Basket</button>
+     <hr>
+     <br>
+</form>
+
+
+
+{% endblock %}

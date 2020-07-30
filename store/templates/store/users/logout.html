@@ -1,0 +1,28 @@
+{% extends 'store/basic/base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<hr>
+<h2>You have successfully logged out</h2>
+<h3>See you Soon! </h3>
+<hr>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <h3>Login</h3>
+            <p>Have an account with us?</p>
+            <a href="/login/" class="btn btn-small btn-success">Login</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <h3>Register</h3>
+            <p>Don't have an account yet?</p>
+            <a href="/regsiter/" class="btn btn-small btn-success">Register</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
