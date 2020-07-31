@@ -22,3 +22,10 @@ body{
 	font-size:18px;
 	margin-right:20px;
 }
+footer{
+	color:white;
+}
+.footer-link{
+	text-decoration: none;
+	color:white;
+}
