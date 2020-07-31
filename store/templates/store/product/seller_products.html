@@ -29,22 +29,22 @@
 		<div class="card card-body">
 			<table class="table table-sm">
 				<tr>
-					<th>Action</th>
 					<th>Product</th>
                     <th>Price</th>
                     <th>Active</th>
                     <th>Description</th>
+					<th>Action</th>
 				</tr>
 				{% for product in products %}
 					<tr>
-						<td>
-							<span><a href="{% url 'edit_product' product_id=product.id  %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
-							<span><a href="{% url 'delete_product' product_id=product.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>	
-						</td>
 						<td>{{product.name}}</td>
                         <td>{{product.price}}</td>
                         <td>{{product.active}}</td>
 						<td>{{product.description}}</td>
+						<td>
+							<span><a href="{% url 'edit_product' product_id=product.id  %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+							<span><a href="{% url 'delete_product' product_id=product.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>	
+						</td>
 					</tr>
 				{% endfor %}
 
