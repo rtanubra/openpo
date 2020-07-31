@@ -38,8 +38,8 @@
 				{% for product in products %}
 					<tr>
 						<td>
-							<span><a href="{% url 'edit_product' product_id=product.id  %}">E</a></span>
-							<span><a href="{% url 'delete_product' product_id=product.id %}">D</a></span>	
+							<span><a href="{% url 'edit_product' product_id=product.id  %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+							<span><a href="{% url 'delete_product' product_id=product.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>	
 						</td>
 						<td>{{product.name}}</td>
                         <td>{{product.price}}</td>

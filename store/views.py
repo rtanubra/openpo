@@ -123,8 +123,6 @@ def seller_baskets(request):
         cost = 0
 
         for order in orders:
-            print(order.product)
-            print(order.product.price)
             cost += order.product.price
         basket.cost=cost
 
@@ -528,6 +526,27 @@ def delete_customer(request,pk):
     context= {
         'item':customer
     }
+    return render(request,'store/delete/delete_template.html',context)
+@login_required
+def delete_location(request,pk):
+    user= request.user
+    #See if they have a seller account if not make one.
+    try:
+        seller = user.seller
+    except:
+        return redirect('create_seller')
+    try:
+        location = seller.location_set.get(id=pk)
+        
+        if request.method == 'POST':
+            location.delete()
+            return redirect('seller_locations')
+    except:
+        #main error cannot locate the location for this seller
+        return redirect('seller_locations')
+    context = {
+            'item':location
+        }
     return render(request,'store/delete/delete_template.html',context)
 
 ####################### End of Views #######################

@@ -19,6 +19,7 @@ urlpatterns= [
     path('seller/locations',views.seller_locations,name='seller_locations'),
     path('seller/create_locations',views.create_locations,name='create_locations'),
     path('seller/edit_locations/<str:pk>',views.edit_location,name='edit_location' ),
+    path('seller/delete_location/<str:pk>',views.delete_location,name='delete_location'),
     path('seller/register',views.register_seller,name='register_seller'),
     path('seller/create_seller',views.create_seller, name='create_seller')
 ]

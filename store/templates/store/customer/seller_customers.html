@@ -39,8 +39,8 @@
                         <td>{{customer.phone}}</td>
                         <td>{{customer.email}}</td>
 						<td>
-							<span><a href="{% url 'edit_customer' pk=customer.id %}">E</a></span>
-							<span><a href="{% url 'delete_customer' pk=customer.id %}">D</a></span>
+							<span><a href="{% url 'edit_customer' pk=customer.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+							<span><a href="{% url 'delete_customer' pk=customer.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>
 						</td>
 					</tr>
 				{% endfor %}

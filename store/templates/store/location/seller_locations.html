@@ -35,8 +35,8 @@
 					<tr>
 						<td>{{location.name}}</td>
 						<td>
-							<span><a href="{% url 'edit_location' pk=location.id %}">E</a></span>
-							<span><a href="">D</a></span>
+							<span><a href="{% url 'edit_location' pk=location.id %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+							<span><a href="{% url 'delete_location' pk=location.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>
 						</td>
 					</tr>
 				{% endfor %}

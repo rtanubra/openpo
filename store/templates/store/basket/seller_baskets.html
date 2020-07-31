@@ -49,8 +49,8 @@
                         <td>{{basket.pickup_location}}</td>
                         <td>{{basket.get_basket_total}}</td>
 						<td>
-							<span><a href="{% url 'edit_basket' basket_id=basket.id  %}">E</a></span>
-							<span><a href="{% url 'delete_basket' basket_id=basket.id  %}">D</a></span>
+							<span><a href="{% url 'edit_basket' basket_id=basket.id  %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span>
+							<span><a href="{% url 'delete_basket' basket_id=basket.id  %}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>
 						</td>
 					</tr>
 				{% endfor %}
