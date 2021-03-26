@@ -164,7 +164,7 @@ python-dateutil==2.7.3
 python-dotenv==0.14.0
 pytz==2018.4
 PyWavelets==0.5.2
-PyYAML==3.12
+PyYAML==5.4
 pyzillow==0.7.0
 pyzmq==17.0.0
 QtAwesome==0.4.4
